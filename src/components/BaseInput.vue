@@ -1,7 +1,7 @@
 <template>
   <div class="base-input">
     <label>{{ label }}</label>
-    <input type="text" :placeholder="placeholder">
+    <input type="text" :placeholder="placeholder" :value="value" @change="onchange">
   </div>
 </template>
 
@@ -15,7 +15,17 @@ export default {
   },
   props: {
     label: String,
-    placeholder: String
+    placeholder: String,
+    value: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    onchange (ev) {
+      console.log(ev.currentTarget.value)
+      this.$emit('value-changed', ev.currentTarget.value)
+    }
   }
 }
 </script>
