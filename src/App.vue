@@ -4,7 +4,9 @@
       <SideBar/>
     </div>
     <div id="content">
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -25,13 +27,10 @@ export default {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, "Microsoft YaHei",Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -40,19 +39,23 @@ html, body {
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 #navbar {
   display: inline-block;
+  box-sizing: border-box;
+  border-right: 1px solid #eeddee;
   width: 20%;
-  height: 100%;
+  flex: 0 0 wrap;
 }
 
 #content {
   display: inline-block;
-  height: 100%;
+  height: 100vh;
   width: 80%;
+  flex: 1;
+  overflow-y: auto;
 }
 
 </style>

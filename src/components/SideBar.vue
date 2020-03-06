@@ -3,7 +3,7 @@
     <router-link to="/">
       Server
     </router-link>
-    <router-link to="/about">
+    <router-link to="/about" >
       Add
     </router-link>
     <router-link to="/setting">
