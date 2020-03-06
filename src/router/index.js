@@ -6,6 +6,7 @@ import AddServer from '../views/AddServer'
 import ManuallyInput from '../views/AddServer/ManuallyInput'
 import VMess from '../views/AddServer/VMess'
 import QRcode from '../views/AddServer/QRcode'
+import Setting from '../views/Setting'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
         component: ManuallyInput
       }
     ]
+  },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: Setting
   },
   {
     path: '/about',
