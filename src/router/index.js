@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
-import Server from '../views/Server.vue'
+import ServerCom from '../views/Server'
+import AddServer from '../views/AddServer'
+import ManuallyInput from '../views/AddServer/ManuallyInput'
+import VMess from '../views/AddServer/VMess'
+import QRcode from '../views/AddServer/QRcode'
 
 Vue.use(VueRouter)
 
@@ -9,7 +13,27 @@ const routes = [
   {
     path: '/',
     name: 'Server',
-    component: Server
+    component: ServerCom
+  },
+  {
+    path: '/add-server',
+    name: 'AddServer',
+    component: AddServer,
+    redirect: '/add-server/vmess',
+    children: [
+      {
+        path: '/add-server/vmess',
+        component: VMess
+      },
+      {
+        path: '/add-server/qrcode',
+        component: QRcode
+      },
+      {
+        path: '/add-server/manually-input',
+        component: ManuallyInput
+      }
+    ]
   },
   {
     path: '/about',

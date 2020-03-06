@@ -1,9 +1,9 @@
 <template>
   <div id="side-bar">
-    <router-link to="/">
+    <router-link to="/" exact>
       Server
     </router-link>
-    <router-link to="/about" >
+    <router-link to="/add-server" >
       Add
     </router-link>
     <router-link to="/setting">
@@ -48,6 +48,10 @@ a:hover {
   background: #ededed;
 }
 a.router-link-exact-active {
+  color: cadetblue;
+  background: #ededed;
+}
+.router-link-active {
   color: cadetblue;
   background: #ededed;
 }
